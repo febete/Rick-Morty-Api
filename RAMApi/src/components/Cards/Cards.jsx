@@ -7,7 +7,14 @@ function Cards({ results }) {
 
     if (results) {
         display = results.map(x => {
-            return (<div className="col-4"> CHARACTER</div>)
+            let { id, name, image } = x
+            return (
+                <div key={id} className="col-4">
+                    {/* {name} */}
+                    <div className="">
+                        <img src={image} alt="" className="img-thumbnail" />
+                    </div>
+                </div>)
         });
     }
     else { display = "No Character Found:/" }
