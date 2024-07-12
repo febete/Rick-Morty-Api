@@ -49,9 +49,9 @@ function App() {
 
           <div className="row">
 
-            <div className="col-3">
-              <Filters />
-            </div>
+
+            <Filters />
+
 
             <div className="col-8">
 
