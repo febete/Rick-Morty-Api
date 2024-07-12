@@ -6,16 +6,19 @@ import "bootstrap/dist/js/bootstrap"
 import Filters from './components/Filters/Filters';
 import Cards from './components/Cards/Cards';
 import Pagination from './components/Pagination/Pagination';
+import Search from './components/Search/Search';
+// import Search from './components/Search/Search';
 
 
 function App() {
   let [pageNumber, setPageNumber] = useState(1);  //default page number 1
   let [fetchedData, updateFetchedData] = useState([]);
   let { info, results } = fetchedData;   //info pagination için, results Cards için
+  let [search, setSearch] = useState("");
 
   console.log("page number = " + pageNumber);
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
 
   //api değiştiğinde bu render olur
@@ -39,6 +42,8 @@ function App() {
         <h1 className='text-center my-4'>
           <span className='text-primary'> Rick & Morty </span>
         </h1>
+
+        <Search setPageNumber={setPageNumber} setSearch={setSearch} />
 
         <div className="container">
 
