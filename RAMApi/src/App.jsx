@@ -22,6 +22,7 @@ function App() {
     (async function () {
       let data = await fetch(api).then(res => res.json());
       updateFetchedData(data);
+
       // console.log(data.result);
     })();
 
@@ -48,9 +49,9 @@ function App() {
             <div className="col-8">
 
               <div className="row">
-                <Cards />
-                <Cards />
-                <Cards />
+
+                <Cards results={results} />
+
               </div>
 
             </div>
