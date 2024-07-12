@@ -9,6 +9,8 @@ import Cards from './components/Cards/Cards';
 
 function App() {
   let [pageNumber, setPageNumber] = useState(1);  //default page number 1
+  let [fetchedData, updateFetchedData] = useState([]);
+  let { info, results } = fetchedData;   //info pagination için, results Cards için
 
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
@@ -19,7 +21,8 @@ function App() {
 
     (async function () {
       let data = await fetch(api).then(res => res.json());
-      console.log(data.result);
+      updateFetchedData(data);
+      // console.log(data.result);
     })();
 
 
