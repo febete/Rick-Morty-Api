@@ -1,6 +1,9 @@
 import React from 'react'
+import FilterBTN from '../FilterBTN'
 
 function Status() {
+    let status = ["Alive", "Dead", "Unknown"];
+
     return (
         <div className="accordion-item">
             <h2 className="accordion-header">
@@ -10,6 +13,12 @@ function Status() {
             </h2>
             <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div className="accordion-body">
+
+
+                    {status.map((items, index) => (<FilterBTN key={index} name="status" index={index} items={items} />
+                    ))}
+
+
 
                 </div>
             </div>
