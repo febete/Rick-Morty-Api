@@ -4,11 +4,11 @@ function InputGroup({ total, name, setID }) {
     console.log([...Array(total).keys()])
     return (
         <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+            {/* <label class="input-group-text" for="inputGroupSelect01">Options</label> */}
             <select
                 onChange={e => setID(e.target.value)}
                 class="form-select" id={name}>
-                <option selected>Choose...</option>
+                <option value='1' selected>Choose...</option>
 
                 {[...Array(total).keys()].map(x => {
                     return (
