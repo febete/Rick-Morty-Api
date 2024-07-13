@@ -1,6 +1,6 @@
 import React from 'react'
 
-function FilterBTN({ name, index, items }) {
+function FilterBTN({ name, index, items, task, setPageNumber }) {
     return (
         <>
             {/* Hide the radio button */}
@@ -21,6 +21,12 @@ function FilterBTN({ name, index, items }) {
 
             <div className="form-check">
                 <input
+                    onClick={() => {
+                        setPageNumber(1);
+                        task(items);
+                    }}
+
+
                     className="form-check-input x" type="radio"
                     name={name}
                     id={`${name} - ${index}`}

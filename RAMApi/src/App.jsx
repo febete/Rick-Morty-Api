@@ -15,10 +15,13 @@ function App() {
   let [fetchedData, updateFetchedData] = useState([]);
   let { info, results } = fetchedData;   //info pagination için, results Cards için
   let [search, setSearch] = useState("");
+  let [status, setStatus] = useState("");
+  let [gender, setGender] = useState("");
+  let [species, setSpecies] = useState("");
 
   console.log("page number = " + pageNumber);
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
 
   //api değiştiğinde bu render olur
@@ -43,21 +46,31 @@ function App() {
           <span className='text-primary'> Rick & Morty </span>
         </h1>
 
-        <Search setPageNumber={setPageNumber} setSearch={setSearch} />
+        <Search
+          setPageNumber={setPageNumber}
+          setSearch={setSearch}
+        />
 
         <div className="container">
 
           <div className="row">
 
 
-            <Filters />
+            <Filters
+              setSpecies={setSpecies}
+              setGender={setGender}
+              setStatus={setStatus}
+              setPageNumber={setPageNumber}
+            />
 
 
             <div className="col-8">
 
               <div className="row">
 
-                <Cards results={results} />
+                <Cards
+                  results={results}
+                />
 
               </div>
 
@@ -67,7 +80,15 @@ function App() {
 
         </div>
 
-        <div className="div"> <Pagination setPageNumber={setPageNumber} pageNumber={pageNumber} info={info} /> </div>
+        <div className="div">
+
+          <Pagination
+            setPageNumber={setPageNumber}
+            pageNumber={pageNumber}
+            info={info}
+          />
+
+        </div>
 
       </div>
     </>
