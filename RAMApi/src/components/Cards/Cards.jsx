@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styles from './Cards.module.scss'
 
 
-function Cards({ results }) {
+function Cards({ results, page }) {
 
     let display;
     console.log(results);
@@ -11,8 +12,12 @@ function Cards({ results }) {
         display = results.map(x => {
             let { id, name, image, location, status } = x
 
+
             return (
-                <div key={id} className="col-4 mb-4 position-relative">
+                <Link
+                    style={{ textDecoration: "none" }}
+                    to={`${page}${id}`}
+                    key={id} className="col-4 mb-4 position-relative text-dark">
                     {/* {name} */}
                     <div className={styles.cards}>
                         <img src={image} alt="" className={`${styles.img}  img-thumbnail`} />
@@ -44,7 +49,7 @@ function Cards({ results }) {
                         }
                     })()}
                     {/* <div className={`${styles.badge}  position-absolute badge text-bg-danger`} > {status} </div> */}
-                </div >
+                </Link >
             );
         });
     }

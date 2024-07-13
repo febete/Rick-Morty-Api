@@ -56,7 +56,9 @@ function Location() {
 
                 <div className="col-8">
                     <div className="row">
-                        <Cards results={results} />
+                        <Cards
+                            page="/location/"
+                            results={results} />
                     </div>
 
                 </div>
