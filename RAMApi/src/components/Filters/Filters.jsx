@@ -22,7 +22,7 @@ function Filters({ setSpecies, setGender, setStatus, setPageNumber }) {
             <div
                 onClick={clear}
                 style={{ cursor: "pointer" }}
-                className="text-center text-primary text-decoration-underline">Clear Filters</div>
+                className="text-center text-primary text-decoration-underline mb-4">Clear Filters</div>
 
 
 
