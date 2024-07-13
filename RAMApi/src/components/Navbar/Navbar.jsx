@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import '../../App.css';
 
 function s() {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary mb-4">
             <div className="container">
                 <Link to="/" className="fs-3 my-4 navbar-brand">
                     <span className="text-primary"> Rick & Morty </span>
@@ -24,6 +25,7 @@ function s() {
                     <ul className="navbar-nav fs-5">
                         <li className="nav-item">
                             <NavLink
+                                activeClassName='active'
                                 to="/"
                                 className="nav-link"
                                 aria-current="page"
